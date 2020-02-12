@@ -43,7 +43,8 @@ class CgiSerial:
         self.cgimode = False                    # Wird Script als CGI ausgeführt?
         self.energy_consumption = None          # Ausgelesener Wert Energie Verbrauch kWh
         self.energy_production = None           # Ausgelesener Wert Energie Produktion kWh
-        self.power = None
+        self.power = None                       # Ausgelesener Wert Leistung
+        self.csv_seperator = ";"                # Trennzeichen CSV Daten Datei
         pass
 
     # Delete des CgiSerial Obejekts
@@ -216,10 +217,8 @@ class CgiSerial:
         if not os.path.exists(path_currentdir + '/data/' + year + '/' + month):
             os.mkdir(path_currentdir + '/data/' + year + '/' + month)
         datafile = path_currentdir + '/data/' + year + '/' + month + '/' + day + '.txt'
-        line_array = self.readdata.split("\n")
         with open(datafile, 'a') as f:
-            for line in line_array:
-                f.write("%s\n" % line)
+            f.write(str(time.time) + self.csv_seperator + str(self.energy_consumption) + self.csv_seperator + str(self.energy_production) + self.csv_seperator + str(self.power) + "\n")
         pass
 
 
