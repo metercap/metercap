@@ -1,0 +1,14 @@
+body {
+    font-variant-numeric: tabular-nums;
+    font-family: system, -apple-system, BlinkMacSystemFont, 'Open Sans', sans-serif;
+ }
+
+table {
+    width:100%;
+}
+
+td {
+    border:1px solid;
+    overflow:hidden;
+    vertical-align:top;
+}
