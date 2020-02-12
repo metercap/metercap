@@ -242,4 +242,5 @@ cgiserial.ExecuteRequest()
 #cgiserial.FlushOutput()
 cgiserial.ParseSML()
 cgiserial.CompactOutput()
+cgiserial.WriteToDisk()
 
